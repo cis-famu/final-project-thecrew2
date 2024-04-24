@@ -20,22 +20,4 @@ public class Ball : MonoBehaviour
         rb.velocity = new Vector2(speed * x, speed * y);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Goal"))
-        {
-            // Reset the ball's position and velocity
-            rb.velocity = Vector2.zero;
-            transform.position = Vector2.zero;
-
-            // Launch the ball again after a short delay
-            Invoke("LaunchBall", 2f);
-
-            // Here you could also keep track of the score
-        }
-
-
-    }
-
-
 }
